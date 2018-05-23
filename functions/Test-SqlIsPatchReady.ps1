@@ -1,5 +1,16 @@
 # Requires -Modules {SQLServer, Pester}
 function Test-SqlIsPatchReady {
+<#
+.DESCRIPTION
+    For AOAGs on a target server, is the target in an appropriate
+    to patch and reboot without causing the AG health state to degrade. 
+
+.PARAMETER serverInstance
+    Target to test. Assert that this serverInstance is not a...
+        * syncronous commit partner for any AG
+        * automatic failover partner for any AG
+        * primary replica for any AG
+#>
     [CmdletBinding()]param (
         [Parameter(Mandatory=$true)]
             [Alias('serverName','sqlServer','server')]
