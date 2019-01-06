@@ -61,6 +61,13 @@ Following these actions, we hope the farm will look like the following.
 
 # Usage
 
+Clone into a folder and import (note we rename on clone, see #3 for why).
+
+```powershell
+git clone git@github.com:petervandivier/ag-patch-buddy.git AOAGPatchBuddy
+Import-Module .\AOAGPatchBuddy
+```
+
 `Test-SqlIsPatchReady` - after setting all AGs to a safe state, run a couple quick pester checks to assert the server is ok to patch.
 
 `Resolve-Environment` - takes an array of hosts and enumerates AGs on these servers and their respective partnership roles  
